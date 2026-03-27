@@ -31,4 +31,15 @@
 ### Data Wrangling
 
 1. Names normalization
-    * 
+    *
+
+
+### Answering Data Questions
+
+1. Total revenue during 2024 shown in a line chart by quarters
+2. 2024 sales by customer segment in a bar chart
+3. 2024 sales by country and product category
+4. Most sold product by country
+5. Correlation between discount percent and units sold using a scatter plot
+6. Comparison of payment methods shown in a heatmap
+7. Box plot of the customer satisfaction data distribution 
