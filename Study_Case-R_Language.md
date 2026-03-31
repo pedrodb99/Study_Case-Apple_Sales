@@ -42,4 +42,14 @@
 4. Most sold product by country
 5. Correlation between discount percent and units sold using a scatter plot
 6. Comparison of payment methods shown in a heatmap
-7. Box plot of the customer satisfaction data distribution 
+7. Box plot of the customer satisfaction data distribution
+
+Total revenue by country
+
+`revenue_by_country_2024 <- data_clean %>%
+  select(year,quarter,region,country,revenue_usd) %>% 
+  filter(year==2024,region=="North America") %>%
+  group_by(country) %>%
+  summarize(total_revenue = sum(revenue_usd, na.rm = TRUE)) %>%
+  arrange(desc(total_revenue))`
+
