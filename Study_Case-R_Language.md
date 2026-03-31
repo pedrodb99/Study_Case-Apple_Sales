@@ -53,3 +53,19 @@ Total revenue by country
   summarize(total_revenue = sum(revenue_usd, na.rm = TRUE)) %>%
   arrange(desc(total_revenue))`
 
+Bar chart
+
+`barchart_rbc2024 <- 
+  ggplot(data = revenue_by_country_2024,aes(x= reorder(country, -total_revenue),y= total_revenue, fill=country)) +
+  geom_bar(stat="identity", width=0.5) +
+  geom_text(aes(label=total_revenue), vjust=-0.5, size=3) 
+  theme_minimal()`
+
+Total revenue by country and quarter
+
+`revenue_by_qrcountry_2024 <- data_clean %>%
+  select(year,quarter,region,country,revenue_usd) %>% 
+  filter(year==2024,region=="North America") %>%
+  group_by(quarter,country) %>%
+  summarize(total_revenue = sum(revenue_usd, na.rm = TRUE)) %>%
+  arrange(desc(quarter),desc(total_revenue))`
